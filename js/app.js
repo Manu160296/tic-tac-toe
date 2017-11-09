@@ -2,6 +2,8 @@ window.onload = function() {
   // obteniendo arreglo de celdas :
   var board = document.querySelector(".board-js");
   board.addEventListener('click', addX);
+  var restartButton = document.querySelector(".restart")
+  restartButton.addEventListener('click', restart);
 /*
   var dataCell = document.getElementsByTagName("td");  //prueba
   dataCell.addEventListener('click',winnerX)
@@ -20,10 +22,11 @@ function addX(event) {
     event.target.textContent = "X";
     winnerX();
     centinel = false;
-  } else {
+  } else if(centinel = !centinel) {
     event.target.textContent = "O";
     winnerO();
-    centinel = !centinel;
+  } else {
+    winnerMessage.textContent="Es un empate"
   }
 
 }
